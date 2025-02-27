@@ -27,7 +27,7 @@ export class Board {
       this.board.substring(0, initialLocation) +
       "." +
       this.board.substring(initialLocation + 1, updatedLocation) +
-      `X` +
+      "X" +
       this.board.substring(updatedLocation + 1);
     this.board = updatedBoard;
   }
