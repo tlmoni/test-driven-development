@@ -5,7 +5,7 @@ export class Board {
   constructor(width, height) {
     this.width = width;
     this.height = height;
-    this.createBoard()
+    this.createBoard();
   }
 
   createBoard() {
@@ -22,9 +22,14 @@ export class Board {
 
   tick() {
     const initialLocation = this.location;
-    const updatedLocation = this.location + this.width + 1
-    const updatedBoard = this.board.substring(0, initialLocation) + "." + this.board.substring(initialLocation + 1, updatedLocation) + `X` + this.board.substring(updatedLocation + 1)
-    this.board = updatedBoard
+    const updatedLocation = this.location + this.width + 1;
+    const updatedBoard =
+      this.board.substring(0, initialLocation) +
+      "." +
+      this.board.substring(initialLocation + 1, updatedLocation) +
+      `X` +
+      this.board.substring(updatedLocation + 1);
+    this.board = updatedBoard;
   }
 
   toString() {
