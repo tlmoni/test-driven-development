@@ -40,9 +40,8 @@ export class Board {
         this.block +
         this.board.substring(updatedLocation + 1);
       this.board = updatedBoard;
-    }
-    else {
-      this.blockFalling = false
+    } else {
+      this.blockFalling = false;
     }
   }
 
