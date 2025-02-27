@@ -78,7 +78,7 @@ function createApp(database) {
   const convert = (date) => (date instanceof Date) ? date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate() : date;
 
   function isMonday(date) {
-    return convert(date).dayOfWeek === 1;
+    return date.dayOfWeek === 1;
   }
 
   function isHoliday(date) {
@@ -87,7 +87,7 @@ function createApp(database) {
       let holiday = Temporal.PlainDate.from(row.holiday);
       if (
         date &&
-        convert(date).equals(holiday)
+        date.equals(holiday)
       ) {
         return true;
       }
