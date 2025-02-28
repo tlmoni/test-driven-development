@@ -15,11 +15,27 @@ export class RotatingShape {
 
   rotateRight() {
     const rows = this.shape.split("\n");
-    return rows[0].split("").map((_, j) => rows.map((row) => row[j]).reverse().join("")).join("\n") + "\n";
+    return (
+      rows[0]
+        .split("")
+        .map((_, j) =>
+          rows
+            .map((row) => row[j])
+            .reverse()
+            .join("")
+        )
+        .join("\n") + "\n"
+    );
   }
 
   rotateLeft() {
     const rows = this.shape.split("\n");
-    return rows[0].split("").map((_, j) => rows.map(row => row[j]).join("")).reverse().join("\n") + "\n";
+    return (
+      rows[0]
+        .split("")
+        .map((_, j) => rows.map((row) => row[j]).join(""))
+        .reverse()
+        .join("\n") + "\n"
+    );
   }
 }
