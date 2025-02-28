@@ -15,6 +15,12 @@ IIII.
 .....
 `)
 
+  static O_SHAPE = new Tetromino(
+`.OO
+.OO
+...
+`)
+
   static horizontalI =
 `.....
 .....
@@ -40,7 +46,9 @@ IIII.
   }
 
   rotateRight() {
-    if (this.shape === Tetromino.verticalI) {
+    if (this === Tetromino.O_SHAPE) {
+      return this
+    } else if (this.shape === Tetromino.verticalI) {
       return new Tetromino(Tetromino.horizontalI)
     } else if (this.shape === Tetromino.horizontalI) {
       return new Tetromino(Tetromino.verticalI)
@@ -51,7 +59,9 @@ IIII.
   }
 
   rotateLeft() {
-    if (this.shape === Tetromino.verticalI) {
+    if (this === Tetromino.O_SHAPE) {
+      return this
+    } else if (this.shape === Tetromino.verticalI) {
       return new Tetromino(Tetromino.horizontalI)
     } else if (this.shape === Tetromino.horizontalI) {
       return new Tetromino(Tetromino.verticalI)
